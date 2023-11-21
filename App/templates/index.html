@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="masthead">
+  <div class="containernav">
+    <h1 class="titulo">BEM VINDO AO MEU BLOG </h1>
+  </div>
+</header>
+<style>
+  .card-body{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(195, 195, 125);
+    border-radius: 5px;
+    border:1px solid black;
+    padding: 1px;
+    align-self: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div>
+      {% for post in post_list %}
+      <div class="card-body">
+        <div>
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+          <p class="card-text">{{post.content|slice:":65"}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MEU BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style>
+  .main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+    height: 100vh;
+  }
+  .navbar{
+    background-color: beige;
+  }
+</style>
+<body>
+  <nav>
+    <div>
+      <a class="navbar" href="{% url 'home' %}">MEU BLOG</a>
+    </div>
+  </nav>
+  <div class="main">
+    {% block content %}
+    {% endblock content %}
+  
+  </div>
+  <footer>
+    
+    <p>Copyright &copy; 2023 MEU BLOG </p>
+  </footer>
+</body>
+
+</html>
